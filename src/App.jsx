@@ -1,28 +1,38 @@
-import { useState } from 'react'
+import React from 'react';
+import Header from './components/Header.jsx';
+import Hero from './components/Hero.jsx';
+import Footer from './components/Footer.jsx';
+import { AboutSection, TeamSection, EventsSection, GallerySection } from './components/Sections.jsx';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+    <div className="min-h-screen bg-white text-gray-900">
+      <Header />
+      <main id="main">
+        <Hero />
+        <AboutSection />
+        <TeamSection />
+        <EventsSection />
+        <GallerySection />
+        <section id="contact" className="bg-white">
+          <div className="mx-auto max-w-6xl px-4 py-12 sm:py-16">
+            <h2 className="text-2xl font-semibold tracking-tight">Contact</h2>
+            <p className="mt-4 text-gray-700">
+              Email us at{' '}
+              <a href="mailto:mindquest@college.edu" className="text-emerald-700 underline underline-offset-4">
+                mindquest@college.edu
+              </a>
+              . Follow us on{' '}
+              <a href="https://instagram.com" target="_blank" rel="noreferrer" className="text-emerald-700 underline underline-offset-4">Instagram</a>
+              {' '}and{' '}
+              <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="text-emerald-700 underline underline-offset-4">LinkedIn</a>.
+            </p>
+          </div>
+        </section>
+      </main>
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
